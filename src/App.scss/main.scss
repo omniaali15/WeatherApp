@@ -1,0 +1,72 @@
+$primaryColor: #fff;
+$background-color_1: #2c5046;
+$background-color_2: transparent;
+$background-color_3: #000;
+@mixin color($background,$color) {
+    background-color: $background;
+    color: $color;
+}
+body{
+    font-family: "Open Sans" , serif;
+    margin: 0;
+    .wrapper{
+        background: linear-gradient(#7b7b7b , #5ccab5);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container{
+        background-color: $background-color_1;
+        padding-top: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin: auto;
+    }
+    input[type="text"]{
+        @include color($background-color_2,$primaryColor !important);
+        border: 0;
+        border-bottom: solid 1px $primaryColor;
+        width: 100%;
+        display: block;
+        padding-bottom: 4px;
+        font-weight: lighter;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+        font-size: 20px;
+        outline: none;
+    }
+    button{
+        @include color( $background-color_3,$primaryColor);
+        border: 0;
+        margin: 2px;
+        border-radius: 2px;
+        font-weight: lighter;
+        letter-spacing: 1px;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: 100;
+        &:active{
+            outline: none; 
+        }
+    }
+    .info{
+        width: 100%;
+        font-size: 20px;
+        font-weight: 200;
+        letter-spacing: 2px;
+    }
+    .info-key{
+        color: $primaryColor;
+        border-bottom: solid 2px rgba(255, 255, 255, 0.06);
+        font-weight: 400;
+        &:last-child{
+            border: 0;
+        }
+    }
+    .info-value{
+        color: $primaryColor;
+        font-weight: 200;
+    }
+}
